@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html>
+ 	<head>
+ 		<meta charset="utf-8">
+ 		<title>Calculator</title>
+ 		
+ 		<style>
+			body{
+				font-family: Palatino;
+				background: #6B90D4;
+			}
+			.container {
+				position: absolute;
+				top: 10%;
+				left: 35%;
+			}
+			.screen {
+				height: 60px;
+			}
+			.but { 
+				width: 60px;
+				height: 60px;
+				cursor: pointer;
+			}
+			.but:hover {
+				background-color: #4577D4;
+				color: white;
+			}
+ 		</style>
+ 		<script>
+ 			function insert_elem(num) {
+				document.view.screen.value = document.view.screen.value + num;
+			}
+			function clear_all() {
+				document.view.screen.value = '';
+			}
+			function clear_one() {
+				var temp = document.view.screen.value;
+				document.view.screen.value = temp.substring(0, temp.length-1);
+			}
+			function persent() {
+				document.view.screen.value = document.view.screen.value /100;
+			}
+			function result() {
+				var res = document.view.screen.value;
+				if(res){
+					document.view.screen.value = eval(res);
+				}
+			}
+			show_data(){
+				document.view.screen.value = <% include data.ejs %>;
+			}
+ 		</script>
+ 	</head>
+
+ 	<body>
+ 		<div class="container">
+ 			<form name="view">
+ 				<input class="screen" name="screen">
+ 			</form>
+			<table class="button_panel">
+				<tr>
+					<th><input class="but" type="button" value="AC"onclick="clear_all()"></th>
+					<th><input class="but" type="button" value="C" onclick="clear_one()"></th>
+					<th><input class="but" type="button" value="%" onclick="persent()"></th>
+					<th><input class="but" type="button" value="/" onclick="insert_elem('/')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value="7" onclick="insert_elem(7)"></th>
+					<th><input class="but" type="button" value="8" onclick="insert_elem(8)"></th>
+					<th><input class="but" type="button" value="9" onclick="insert_elem(9)"></th>
+					<th><input class="but" type="button" value="*" onclick="insert_elem('*')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value="4" onclick="insert_elem(4)"></th>
+					<th><input class="but" type="button" value="5" onclick="insert_elem(5)"></th>
+					<th><input class="but" type="button" value="6" onclick="insert_elem(6)"></th>
+					<th><input class="but" type="button" value="-" onclick="insert_elem('-')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value="1" onclick="insert_elem(1)"></th>
+					<th><input class="but" type="button" value="2" onclick="insert_elem(2)"></th>
+					<th><input class="but" type="button" value="3" onclick="insert_elem(3)"></th>
+					<th><input class="but" type="button" value="+" onclick="insert_elem('+')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value="F" onclick="show_data()"></th>
+					<th><input class="but" type="button" value="0" onclick="insert_elem(0)"></th>
+					<th><input class="but" type="button" value="." onclick="insert_elem('.')"></th>
+					<th><input class="but" type="button" value="=" onclick="result()"></th>
+				</tr>
+			</table>
+ 		</div>
+ 	</body>
+</html>

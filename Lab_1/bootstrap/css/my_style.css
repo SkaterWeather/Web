@@ -1,0 +1,40 @@
+body{
+	font-family: Palatino;
+}
+.topside a{
+	color: white;
+}
+a:hover{
+	color: black;
+	text-decoration: none;
+}
+.topside{
+	display: grid;
+	grid-template-columns: 60% 10% 10% 10% 10%;
+	background: #A2000C;
+	color: white;
+	padding: 1em;
+}
+#one, #two, #three, #four{
+	text-align: center;
+	vertical-align: center;
+}
+.uppermid{
+	display: grid;
+	grid-template-columns: 30% 70%;
+	background: #D1343C;
+	padding: 1em;
+	text-align: center;
+}
+.midside{
+	display: grid;
+	grid-template-columns: 10% 20% 60% 10%;
+	min-height: 500px;
+}
+.footer{
+	display: grid;
+	background: #A2000C;
+	color: white;
+	padding: 1em;
+	text-align: center;
+}

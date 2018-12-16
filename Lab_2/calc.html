@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+ 	<head>
+ 		<meta charset="utf-8">
+ 		<title>Calculator</title>
+ 		
+ 		<link href="css/bootstrap.css" rel="stylesheet">
+ 		<link type="text/css" rel="stylesheet" href="css/my_style.css" />
+ 		<script src="script.js"></script>
+ 	</head>
+
+ 	<body>
+ 		<div class="container">
+ 			<form name="view">
+ 				<input class="screen" name="screen">
+ 			</form>
+			<table class="button_panel">
+				<tr>
+					<th><input class="but" type="button" value="AC"onclick="clear_all()"></th>
+					<th><input class="but" type="button" value="C" onclick="clear_one()"></th>
+					<th><input class="but" type="button" value="%" onclick="persent()"></th>
+					<th><input class="but" type="button" value="/" onclick="insert_elem('/')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value="7" onclick="insert_elem(7)"></th>
+					<th><input class="but" type="button" value="8" onclick="insert_elem(8)"></th>
+					<th><input class="but" type="button" value="9" onclick="insert_elem(9)"></th>
+					<th><input class="but" type="button" value="*" onclick="insert_elem('*')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value="4" onclick="insert_elem(4)"></th>
+					<th><input class="but" type="button" value="5" onclick="insert_elem(5)"></th>
+					<th><input class="but" type="button" value="6" onclick="insert_elem(6)"></th>
+					<th><input class="but" type="button" value="-" onclick="insert_elem('-')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value="1" onclick="insert_elem(1)"></th>
+					<th><input class="but" type="button" value="2" onclick="insert_elem(2)"></th>
+					<th><input class="but" type="button" value="3" onclick="insert_elem(3)"></th>
+					<th><input class="but" type="button" value="+" onclick="insert_elem('+')"></th>
+				</tr>
+				<tr>
+					<th><input class="but" type="button" value=" " onclick="random()"></th>
+					<th><input class="but" type="button" value="0" onclick="insert_elem(0)"></th>
+					<th><input class="but" type="button" value="." onclick="insert_elem('.')"></th>
+					<th><input class="but" type="button" value="=" onclick="result()"></th>
+				</tr>
+			</table>
+ 		</div>
+ 	</body>
+</html>
